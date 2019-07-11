@@ -11,7 +11,6 @@ window.onload = function () {
     let score = 0;
     let gameTime = 10000;
 
-
     startBtn.addEventListener('click', function () {
         showBtnAnimation();
         startGame();
@@ -35,6 +34,12 @@ window.onload = function () {
 
         setTimeout(() => {
             // TODO: 写当游戏时间结束后要发生的事
+            titleH1.innerHTML = 'TIME UP!';
+            startBtn.classList.add('animate');
+            startBtn.style.display = 'inline-block';
+            startBtn.innerHTML = 'Replay!';
+            scoreBoard.innerHTML = score;
+            timeUp = true;
         }, gameTime)
     }
 

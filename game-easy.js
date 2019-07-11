@@ -101,6 +101,13 @@ window.onload = function () {
      */
     function comeOutAndStop(hole, time) {
         // TODO: 写地鼠出洞并停留相应时间，如果游戏时间未结束(timeUp)，继续出洞(peep).
+        hole.classList.add('up');
+        setTimeout(() => {
+            hole.classList.remove('up');
+            if (!timeUp) {
+                peep();
+            }
+        }, time);
     }
 
     /**

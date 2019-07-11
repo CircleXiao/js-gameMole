@@ -115,6 +115,10 @@ window.onload = function () {
      */
     moles.forEach(mole => mole.addEventListener('click', function (e) {
         // TODO: 在这里写用户点击地鼠发生的事.
+        if (!e.isTrusted) return;
+        score++;
+        this.parentNode.classList.remove('up');
+        scoreBoard.textContent = score;
     }));
 
 };
